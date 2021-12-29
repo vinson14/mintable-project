@@ -1,7 +1,7 @@
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 const RafflesListingContainer = ({ children }) => {
-  return <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>{children}</Box>;
+  return <Grid container>{children}</Grid>;
 };
 
 export default RafflesListingContainer;

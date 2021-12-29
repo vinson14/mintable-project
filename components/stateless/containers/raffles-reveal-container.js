@@ -3,7 +3,7 @@ import CardContainer from "./card-container";
 
 const RafflesReviewContainer = ({ children }) => {
   return (
-    <Grid item lg={9}>
+    <Grid item sm={12} lg={9}>
       <CardContainer>{children}</CardContainer>
     </Grid>
   );

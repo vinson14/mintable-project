@@ -4,7 +4,7 @@ import CardContainer from "./card-container";
 
 const RafflesListContainer = ({ children }) => {
   return (
-    <Grid item lg={3} borderRadius={RAFFLES_LIST_CONTAINER_BORDER_RADIUS}>
+    <Grid item sm={12} lg={3} borderRadius={RAFFLES_LIST_CONTAINER_BORDER_RADIUS}>
       <CardContainer>{children}</CardContainer>
     </Grid>
   );
