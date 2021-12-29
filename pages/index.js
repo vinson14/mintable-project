@@ -5,6 +5,9 @@ import RafflesListContainer from "../components/stateless/containers/raffles-lis
 import RafflesRevealContainer from "../components/stateless/containers/raffles-reveal-container";
 import RafflesListHeader from "../components/stateless/typography/raffles-list-header";
 import RafflesListing from "../components/stateless/containers/raffles-listing";
+import RafflesRevealHeader from "../components/stateless/typography/raffles-reveal-header";
+import { RAFFLES_REVEAL_HEADER_CAPTION, RAFFLES_REVEAL_HEADER_TITLE } from "../constants/strings";
+import MutedRevealRafflesCard from "../components/stateless/raffles/muted-reveal-raffles-card";
 
 const HomePage = () => {
   return (
@@ -15,7 +18,10 @@ const HomePage = () => {
           <RafflesListHeader>Get More Tickets</RafflesListHeader>
           <RafflesListing />
         </RafflesListContainer>
-        <RafflesRevealContainer>Raffles Reveal</RafflesRevealContainer>
+        <RafflesRevealContainer>
+          <RafflesRevealHeader title={RAFFLES_REVEAL_HEADER_TITLE} caption={RAFFLES_REVEAL_HEADER_CAPTION} />
+          <MutedRevealRafflesCard />
+        </RafflesRevealContainer>
       </MainContainer>
     </Box>
   );
