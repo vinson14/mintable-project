@@ -8,10 +8,11 @@ import RafflesListing from "../components/stateless/containers/raffles-listing";
 import RafflesRevealHeader from "../components/stateless/typography/raffles-reveal-header";
 import { RAFFLES_REVEAL_HEADER_CAPTION, RAFFLES_REVEAL_HEADER_TITLE } from "../constants/strings";
 import MutedRevealRafflesCard from "../components/stateless/raffles/muted-reveal-raffles-card";
+import PageContainer from "../components/stateless/containers/page-container";
 
 const HomePage = () => {
   return (
-    <Box>
+    <PageContainer>
       <TopNavbar />
       <MainContainer>
         <RafflesListContainer>
@@ -23,7 +24,7 @@ const HomePage = () => {
           <MutedRevealRafflesCard />
         </RafflesRevealContainer>
       </MainContainer>
-    </Box>
+    </PageContainer>
   );
 };
 
