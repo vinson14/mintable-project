@@ -1,5 +1,12 @@
+import { Box } from "@mui/material";
+import TopNavbar from "../components/stateless/navigation/top-navbar";
+
 const HomePage = () => {
-  return <div>Home page</div>;
+  return (
+    <Box>
+      <TopNavbar />
+    </Box>
+  );
 };
 
 export default HomePage;
