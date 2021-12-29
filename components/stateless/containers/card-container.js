@@ -3,7 +3,7 @@ import { Card, CardContent } from "@mui/material";
 const CardContainer = ({ children }) => {
   return (
     <Card>
-      <CardContent>{children}</CardContent>
+      <CardContent sx={{ p: 0 }}>{children}</CardContent>
     </Card>
   );
 };

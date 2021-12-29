@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const theme = createTheme({
+    typography: {
+      fontFamily: "'Lato', sans-serif",
+    },
+  });
+  return (
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />;
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
