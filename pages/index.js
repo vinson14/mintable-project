@@ -18,10 +18,23 @@ import RafflesRevealMainSectionCaption from "../components/stateless/typography/
 import RafflesRevealTicketSectionContainer from "../components/stateless/containers/raffles-reveal-ticket-section-container";
 import TicketLogo from "../components/stateless/logo/ticket-logo";
 import RafflesRevealTicketSectionText from "../components/stateless/typography/raffles-reveal-ticket-section-text";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import RafflesRevealTicketSectionLogoTextContainer from "../components/stateless/containers/raffles-reveal-ticket-section-logo-text-container";
+import PrimaryButton from "../components/stateless/buttons/primary-button";
+import { TICKET_OPTIONS, TICKET_SECTION_DRAW_TICKET_BUTTON_TEXT } from "../constants/dimensions";
+import RafflesRevealTicketSectionButtonContainer from "../components/stateless/containers/raffles-reveal-ticket-button-container";
+import SelectInput from "../components/stateless/inputs/select-input";
+import { getTickets } from "../utils/api";
+import useTickets from "../custom-hooks/useTickets";
+import getTicketOptions from "../utils/getTicketOptions";
 
 const HomePage = () => {
-  const [numTickets, setNumTickets] = useState(0);
+  const [selectedTicket, setSelectedTicket] = useState("silver");
+  const [numSilverTickets, numGoldTickets, numDiamondTickets, numTotalTickets] = useTickets();
+  const selectedTicketOnChange = (event) => {
+    setSelectedTicket(event.target.value);
+  };
+  const ticketOptions = getTicketOptions(numSilverTickets, numGoldTickets, numDiamondTickets);
 
   return (
     <PageContainer>
@@ -38,8 +51,14 @@ const HomePage = () => {
             <RafflesRevealMainSectionCaption>{RAFFLES_REVEAL_MAIN_SECTION_CAPTION}</RafflesRevealMainSectionCaption>
           </RafflesRevealMainSectionContainer>
           <RafflesRevealTicketSectionContainer>
-            <TicketLogo />
-            <RafflesRevealTicketSectionText numTickets={numTickets} />
+            <RafflesRevealTicketSectionLogoTextContainer>
+              <TicketLogo />
+              <RafflesRevealTicketSectionText numTickets={numTotalTickets} />
+            </RafflesRevealTicketSectionLogoTextContainer>
+            <RafflesRevealTicketSectionButtonContainer>
+              <SelectInput value={selectedTicket} onChange={selectedTicketOnChange} options={ticketOptions} />
+              <PrimaryButton>{TICKET_SECTION_DRAW_TICKET_BUTTON_TEXT}</PrimaryButton>
+            </RafflesRevealTicketSectionButtonContainer>
           </RafflesRevealTicketSectionContainer>
         </RafflesRevealContainer>
       </MainContainer>

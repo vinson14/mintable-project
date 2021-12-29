@@ -4,7 +4,7 @@ import { TICKET_SECTION_CAPTION } from "../../../constants/dimensions";
 
 const RafflesRevealTicketSectionText = ({ numTickets }) => {
   return (
-    <Box>
+    <Box sx={{ ml: 3.5 }}>
       <Typography>Draw Tickets</Typography>
       <Typography>{numTickets} Tickets found</Typography>
       <Typography>{TICKET_SECTION_CAPTION}</Typography>
