@@ -6,3 +6,9 @@ export const getTickets = async () => {
     diamond: 4,
   };
 };
+
+// simulate getting ticket
+export const getRevealedTicket = async (color) => {
+  console.log(color);
+  return true;
+};

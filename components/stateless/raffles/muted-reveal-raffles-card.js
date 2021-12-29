@@ -9,9 +9,10 @@ import {
 } from "../../../constants/dimensions";
 import RafflesRevealCardTopLogo from "./raffles-reveal-card-top-logo";
 
-const MutedRevealRafflesCard = () => {
+const MutedRevealRafflesCard = ({ onMouseUp }) => {
   return (
     <Box
+      onMouseUp={onMouseUp}
       sx={{
         height: REVEAL_RAFFLES_CARD_HEIGHT,
         width: REVEAL_RAFFLES_CARD_WIDTH,
