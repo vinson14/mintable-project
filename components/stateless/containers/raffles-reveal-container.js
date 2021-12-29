@@ -1,7 +1,12 @@
 import { Grid } from "@mui/material";
+import CardContainer from "./card-container";
 
 const RafflesReviewContainer = ({ children }) => {
-  return <Grid lg={9}>{children}</Grid>;
+  return (
+    <Grid item lg={9}>
+      <CardContainer>{children}</CardContainer>
+    </Grid>
+  );
 };
 
 export default RafflesReviewContainer;
