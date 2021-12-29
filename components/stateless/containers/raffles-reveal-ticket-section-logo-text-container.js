@@ -8,6 +8,7 @@ const RafflesRevealTicketSectionLogoTextContainer = ({ children }) => {
         alignItems: { xs: "center", lg: "stretch" },
         flexDirection: { xs: "column", lg: "row" },
         px: 6,
+        my: 3,
       }}
     >
       {children}
